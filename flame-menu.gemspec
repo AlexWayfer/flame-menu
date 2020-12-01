@@ -11,12 +11,18 @@ Gem::Specification.new do |spec|
 	spec.authors     = ['Alexander Popov', 'Ivan Tyurin']
 	spec.email       = 'alex.wayfer@gmail.com'
 
-	source_code_uri = 'https://github.com/AlexWayfer/flame-menu'
-	spec.homepage = source_code_uri
-	spec.metadata['source_code_uri'] = source_code_uri
-	spec.metadata['homepage_uri'] = spec.homepage
-	spec.metadata['changelog_uri'] =
-		'https://github.com/AlexWayfer/flame-menu/blob/master/CHANGELOG.md'
+	github_uri = "https://github.com/AlexWayfer/#{spec.name}"
+
+	spec.metadata = {
+		'source_code_uri' => github_uri,
+		'documentation_uri' => "http://www.rubydoc.info/gems/#{spec.name}/#{spec.version}",
+		'bug_tracker_uri' => "#{github_uri}/issues",
+		'changelog_uri' => "#{github_uri}/blob/master/CHANGELOG.md",
+		'wiki_uri' => "#{github_uri}/wiki"
+	}
+
+	spec.metadata['homepage_uri'] = github_uri
+	spec.homepage = spec.metadata['homepage_uri']
 
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']
 

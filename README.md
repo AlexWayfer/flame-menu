@@ -8,7 +8,10 @@
 [![License](https://img.shields.io/github/license/AlexWayfer/flame-menu.svg?style=flat-square)](LICENSE.txt)
 [![Gem](https://img.shields.io/gem/v/flame-menu.svg?style=flat-square)](https://rubygems.org/gems/flame-menu)
 
-TODO
+Navigation menu for Flame applications.
+
+There are helper methods (like `@menu.current`),
+but you have to write an HTML layout by yourself (as you want to).
 
 ## Installation
 
@@ -33,9 +36,55 @@ gem install flame-menu
 ## Usage
 
 ```ruby
-require 'flame/menu'
+# controllers/site/_controller.rb
 
-# TODO
+module MyApplication
+  module Site
+    class Controller < MyApplication::Controller
+      include Flame::Menu
+
+      ## Automatic look-up for controllers like `Site::AboutController`
+      MENU_ITEMS = %i[
+        index
+        about
+        faq
+      ].freeze
+
+      protected
+
+      ## Must be defined, but can be simply `true` for public access
+      def available?(controller = self.class)
+        ## Example:
+
+        # return unless authenticated_account
+        # return true if controller::PERMISSION.nil?
+        #
+        # authenticated_account.split(',').include? controller::PERMISSION.to_s
+      end
+    end
+  end
+end
+```
+
+```erb
+<% if @menu %>
+  <nav>
+    <%
+      @menu.current.ancestors.reverse.each do |parent|
+        items = parent.available
+        next if items.size < 2
+    %>
+      <% items.each do |item| %>
+        <a
+          href="<%= path_to item.controller %>"
+          class="<%= 'selected' if item.current? %>"
+        ><%=
+          t.site.header.nav[parent.key][item.key]
+        %></a>
+      <% end %>
+    <% end %>
+  </nav>
+<% end %>
 ```
 
 ## Development

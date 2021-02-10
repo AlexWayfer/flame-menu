@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '~> 2.5'
 
-	spec.add_runtime_dependency 'flame', '~> 5.0.0.rc1'
+	spec.add_runtime_dependency 'flame', '~> 5.0.0.rc6'
 
 	spec.add_development_dependency 'pry-byebug', '~> 3.9'
 

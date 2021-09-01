@@ -41,7 +41,7 @@ Gem::Specification.new do |spec|
 	spec.add_development_dependency 'rspec', '~> 3.9'
 	spec.add_development_dependency 'simplecov', '~> 0.21.2'
 
-	spec.add_development_dependency 'bundler-audit', '~> 0.8.0'
+	spec.add_development_dependency 'bundler-audit', '~> 0.9.0'
 
 	spec.add_development_dependency 'rubocop', '~> 1.4'
 	spec.add_development_dependency 'rubocop-performance', '~> 1.0'

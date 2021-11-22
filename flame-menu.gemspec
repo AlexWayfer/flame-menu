@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
 	github_uri = "https://github.com/AlexWayfer/#{spec.name}"
 
 	spec.metadata = {
+		'rubygems_mfa_required' => 'true',
 		'source_code_uri' => github_uri,
 		'documentation_uri' => "http://www.rubydoc.info/gems/#{spec.name}/#{spec.version}",
 		'bug_tracker_uri' => "#{github_uri}/issues",

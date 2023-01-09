@@ -67,11 +67,6 @@ rubocop_task:
     )
 
 rspec_task:
-  depends_on:
-    - remark
-    - bundle-audit
-    - rubocop
-
   container:
     matrix:
       image: ruby:2.6

@@ -5,11 +5,12 @@ require 'rack/test'
 require 'pry-byebug'
 
 require 'simplecov'
-SimpleCov.start
 
-if ENV['CODECOV_TOKEN']
-	require 'codecov'
-	SimpleCov.formatter = SimpleCov::Formatter::Codecov
+if ENV['CI']
+	require 'simplecov-cobertura'
+	SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
 end
+
+SimpleCov.start
 
 require_relative '../lib/flame/menu'

@@ -56,7 +56,7 @@ module Flame
 
 			def current?
 				if current_controller.class.const_defined?(:MENU_ITEM_KEY)
-					current_controller.class::MENU_ITEM_KEY == key
+					key == current_controller.class::MENU_ITEM_KEY
 				else
 					current_controller.instance_of?(controller)
 				end

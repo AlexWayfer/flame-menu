@@ -190,7 +190,7 @@ describe Flame::Menu do
 	end
 
 	shared_examples 'correct redirect' do |permissions, location|
-		context "has #{permissions.split(',') || 'no'} permissions" do
+		context "with '#{permissions}' permissions" do
 			let(:permissions) { Array(permissions) }
 
 			it 'is redirect' do
@@ -204,7 +204,7 @@ describe Flame::Menu do
 	end
 
 	shared_examples 'does not redirect' do |permissions|
-		context "has #{permissions} permissions" do
+		context "with '#{permissions}' permissions" do
 			let(:permissions) { [permissions] }
 
 			it 'does not redirect' do

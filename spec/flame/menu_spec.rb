@@ -38,7 +38,7 @@ describe Flame::Menu do
 				protected
 
 				def available?(controller = self.class)
-					return unless authenticated_account
+					return false unless authenticated_account
 					return true if controller::PERMISSION.nil?
 
 					authenticated_account.split(',').include? controller::PERMISSION.to_s

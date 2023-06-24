@@ -56,7 +56,7 @@ module MyApplication
       def available?(controller = self.class)
         ## Example:
 
-        # return unless authenticated_account
+        # return false unless authenticated_account
         # return true if controller::PERMISSION.nil?
         #
         # authenticated_account.split(',').include? controller::PERMISSION.to_s

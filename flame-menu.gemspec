@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
 
 	spec.required_ruby_version = '>= 3.0', '< 4'
 
-	spec.add_runtime_dependency 'flame', '~> 5.0.0.rc6'
+	spec.add_dependency 'flame', '~> 5.0.0.rc6'
 end

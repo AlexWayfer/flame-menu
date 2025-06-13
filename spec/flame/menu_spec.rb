@@ -216,27 +216,17 @@ describe Flame::Menu do
 	describe 'requests to /cabinet' do
 		let(:path) { '/cabinet' }
 
-		include_examples(
-			'correct redirect', 'archive_requests', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'available_requests', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/clients'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'actual_offers', '/cabinet/offers'
-		)
+		it_behaves_like 'correct redirect', 'archive_requests', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'available_requests', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/clients'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'actual_offers', '/cabinet/offers'
 	end
 
 	describe 'requests to /cabinet/controller_outside_menu' do
 		let(:path) { '/cabinet/controller_outside_menu' }
 
-		include_examples 'does not redirect'
+		it_behaves_like 'does not redirect'
 	end
 
 	describe(
@@ -244,65 +234,47 @@ describe Flame::Menu do
 	) do
 		let(:path) { '/cabinet/controller_outside_menu_with_permission_check' }
 
-		include_examples('correct redirect', '', '/cabinet')
+		it_behaves_like 'correct redirect', '', '/cabinet'
 
-		include_examples('does not redirect', 'available_requests')
+		it_behaves_like 'does not redirect', 'available_requests'
 	end
 
 	describe 'requests to /cabinet/requests' do
 		let(:path) { '/cabinet/requests' }
 
-		include_examples(
-			'correct redirect', 'archive_requests', '/cabinet/requests/archive'
-		)
-		include_examples(
-			'correct redirect', 'available_requests', '/cabinet/requests/available'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet'
-		)
-		include_examples(
-			'correct redirect', 'actual_offers', '/cabinet'
-		)
+		it_behaves_like 'correct redirect', 'archive_requests', '/cabinet/requests/archive'
+		it_behaves_like 'correct redirect', 'available_requests', '/cabinet/requests/available'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet'
+		it_behaves_like 'correct redirect', 'actual_offers', '/cabinet'
 	end
 
 	describe 'requests to /cabinet/requests/available' do
 		let(:path) { '/cabinet/requests/available' }
 
-		include_examples(
-			'correct redirect', 'archive_requests', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet/requests'
-		)
+		it_behaves_like 'correct redirect', 'archive_requests', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet/requests'
 
-		include_examples(
-			'does not redirect', 'available_requests'
-		)
+		it_behaves_like 'does not redirect', 'available_requests'
 	end
 
 	describe 'requests to /cabinet/requests/performed' do
 		let(:path) { '/cabinet/requests/performed' }
 
-		include_examples(
+		it_behaves_like(
 			'correct redirect',
 			'completed_requests',
 			'/cabinet/requests/performed/completed'
 		)
 
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'archive_requests', '/cabinet/requests'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'clients', '/cabinet/requests'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'selected_offers', '/cabinet/requests'
 		)
 	end
@@ -310,77 +282,51 @@ describe Flame::Menu do
 	describe 'requests to /cabinet/requests/performed/not_completed' do
 		let(:path) { '/cabinet/requests/performed/not_completed' }
 
-		include_examples(
-			'correct redirect', 'completed_requests', '/cabinet/requests/performed'
-		)
+		it_behaves_like 'correct redirect', 'completed_requests', '/cabinet/requests/performed'
 
-		include_examples(
-			'correct redirect', 'archive_requests', '/cabinet/requests/performed'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/requests/performed'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet/requests/performed'
-		)
+		it_behaves_like 'correct redirect', 'archive_requests', '/cabinet/requests/performed'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/requests/performed'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet/requests/performed'
 
-		include_examples(
-			'does not redirect', 'not_completed_requests'
-		)
+		it_behaves_like 'does not redirect', 'not_completed_requests'
 	end
 
 	describe 'requests to /cabinet/requests/archive' do
 		let(:path) { '/cabinet/requests/archive' }
 
-		include_examples(
-			'correct redirect', 'available_requests', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/requests'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet/requests'
-		)
+		it_behaves_like 'correct redirect', 'available_requests', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/requests'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet/requests'
 
-		include_examples(
-			'does not redirect', 'archive_requests'
-		)
+		it_behaves_like 'does not redirect', 'archive_requests'
 	end
 
 	describe 'requests to /cabinet/clients' do
 		let(:path) { '/cabinet/clients' }
 
-		include_examples(
-			'correct redirect', 'available_requests', '/cabinet'
-		)
-		include_examples(
-			'correct redirect', 'available_requests,selected_offers', '/cabinet'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet'
-		)
+		it_behaves_like 'correct redirect', 'available_requests', '/cabinet'
+		it_behaves_like 'correct redirect', 'available_requests,selected_offers', '/cabinet'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet'
 
-		include_examples(
-			'does not redirect', 'clients'
-		)
+		it_behaves_like 'does not redirect', 'clients'
 	end
 
 	describe 'requests to /cabinet/offers' do
 		let(:path) { '/cabinet/offers' }
 
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'archive_requests', '/cabinet'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'clients', '/cabinet'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'clients,selected_offers', '/cabinet/offers/selected'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect', 'selected_offers', '/cabinet/offers/selected'
 		)
-		include_examples(
+		it_behaves_like(
 			'correct redirect',
 			'archive_requests,selected_offers',
 			'/cabinet/offers/selected'
@@ -390,48 +336,24 @@ describe Flame::Menu do
 	describe 'requests to /cabinet/offers/actual' do
 		let(:path) { '/cabinet/offers/actual' }
 
-		include_examples(
-			'correct redirect', 'archive_requests', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'clients,selected_offers', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'selected_offers', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'archive_requests,selected_offers', '/cabinet/offers'
-		)
+		it_behaves_like 'correct redirect', 'archive_requests', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'clients,selected_offers', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'selected_offers', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'archive_requests,selected_offers', '/cabinet/offers'
 
-		include_examples(
-			'does not redirect', 'actual_offers'
-		)
+		it_behaves_like 'does not redirect', 'actual_offers'
 	end
 
 	describe 'requests to /cabinet/offers/selected' do
 		let(:path) { '/cabinet/offers/selected' }
 
-		include_examples(
-			'correct redirect', 'available_requests', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'clients', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'clients,actual_offers', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'actual_offers', '/cabinet/offers'
-		)
-		include_examples(
-			'correct redirect', 'available_requests,actual_offers', '/cabinet/offers'
-		)
+		it_behaves_like 'correct redirect', 'available_requests', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'clients', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'clients,actual_offers', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'actual_offers', '/cabinet/offers'
+		it_behaves_like 'correct redirect', 'available_requests,actual_offers', '/cabinet/offers'
 
-		include_examples(
-			'does not redirect', 'selected_offers'
-		)
+		it_behaves_like 'does not redirect', 'selected_offers'
 	end
 end

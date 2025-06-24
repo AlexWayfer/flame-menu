@@ -15,6 +15,7 @@ Gem::Specification.new do |spec|
 
 	spec.metadata = {
 		'rubygems_mfa_required' => 'true',
+		'homepage_uri' => github_uri,
 		'source_code_uri' => github_uri,
 		'documentation_uri' => "http://www.rubydoc.info/gems/#{spec.name}/#{spec.version}",
 		'bug_tracker_uri' => "#{github_uri}/issues",
@@ -22,7 +23,6 @@ Gem::Specification.new do |spec|
 		'wiki_uri' => "#{github_uri}/wiki"
 	}
 
-	spec.metadata['homepage_uri'] = github_uri
 	spec.homepage = spec.metadata['homepage_uri']
 
 	spec.files = Dir['lib/**/*.rb', 'README.md', 'LICENSE.txt', 'CHANGELOG.md']

@@ -19,10 +19,10 @@ group :lint do
 end
 
 group :test do
+	gem 'coveralls_reborn', '~> 0.29.0', require: false
 	gem 'rack-test', '~> 2.0'
 	gem 'rspec', '~> 3.9'
 	gem 'simplecov', '~> 0.22.0'
-	gem 'coveralls_reborn', '~> 0.29.0', require: false
 end
 
 group :audit do

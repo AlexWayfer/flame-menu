@@ -78,7 +78,7 @@ rspec_task:
   <<: *bundle_cache
 
   env:
-    COVERALLS_REPO_TOKEN: ENCRYPTED[3e5795c73a4d54a3c1e0a27292603f155530ea899ac83d82bb04e32060fb08fe549de75fb089036dd2a82e37a2de2b9e]
+    COVERALLS_REPO_TOKEN: ENCRYPTED[591b1771e1af1052e53e51897bf4b38f5280547d85ffe7d49be2fef4dceec31768426d34e070821b7ae30d579a128fdb]
 
   test_script: bundle exec rspec
 

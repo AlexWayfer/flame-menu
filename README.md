@@ -1,8 +1,7 @@
 # Flame Menu
 
 [![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/AlexWayfer/flame-menu?style=flat-square)](https://cirrus-ci.com/github/AlexWayfer/flame-menu)
-[![Codecov branch](https://img.shields.io/codecov/c/github/AlexWayfer/flame-menu/main.svg?style=flat-square)](https://codecov.io/gh/AlexWayfer/flame-menu)
-[![Code Climate](https://img.shields.io/codeclimate/maintainability/AlexWayfer/flame-menu.svg?style=flat-square)](https://codeclimate.com/github/AlexWayfer/flame-menu)
+[![Coveralls](https://img.shields.io/coverallsCoverage/github/AlexWayfer/flame-menu?branch=main&style=flat-square)](https://coveralls.io/github/AlexWayfer/flame-menu)
 [![Inline docs](https://inch-ci.org/github/AlexWayfer/flame-menu.svg?branch=main)](https://inch-ci.org/github/AlexWayfer/flame-menu)
 [![License](https://img.shields.io/github/license/AlexWayfer/flame-menu.svg?style=flat-square)](LICENSE.txt)
 [![Gem](https://img.shields.io/gem/v/flame-menu.svg?style=flat-square)](https://rubygems.org/gems/flame-menu)

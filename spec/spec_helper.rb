@@ -7,8 +7,8 @@ require 'pry-byebug'
 require 'simplecov'
 
 if ENV['CI']
-	require 'simplecov-cobertura'
-	SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+	require 'coveralls'
+	SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 end
 
 SimpleCov.start

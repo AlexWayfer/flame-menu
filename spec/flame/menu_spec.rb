@@ -45,7 +45,10 @@ describe Flame::Menu do
 				end
 
 				def server_error(error)
+					## I want to
+					# rubocop:disable RSpec/Output
 					puts error, error.backtrace
+					# rubocop:enable RSpec/Output
 					super
 				end
 
